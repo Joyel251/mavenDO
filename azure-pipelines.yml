@@ -2,7 +2,7 @@ trigger:
   - main
 
 pool:
-  name: 'agent'  # Your self-hosted agent pool name
+  name: 'agent'
 
 steps:
   - task: Maven@3
