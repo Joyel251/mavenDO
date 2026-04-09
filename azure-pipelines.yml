@@ -1,14 +1,14 @@
 trigger:
-  - main  # Adjust as per your branch strategy
+  - main
 
 pool:
-  vmImage: 'ubuntu-latest'  # You can use self-hosted agent
+  name: 'agent'  # Your self-hosted agent pool name
 
 steps:
   - task: Maven@3
     displayName: 'Maven Build and Regression Test'
     inputs:
-      mavenPomFile: 'pom.xml'  # Ensure the correct path to your pom.xml
+      mavenPomFile: 'pom.xml'
       goals: 'clean test'
-      publishJUnitResults: true  # Publish JUnit test results
+      publishJUnitResults: true
       testResultsFiles: '**/target/surefire-reports/TEST-*.xml'
